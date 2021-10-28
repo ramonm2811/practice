@@ -43,6 +43,7 @@ console.log(total);
   job: "Teacher",
   friends: ["Michael", "Jose", "Pepe"],
   driverLicense: false,
+  
   calcAge: function () {
     this.age = 2021 - this.birthYear;
     return this.age;
@@ -65,7 +66,7 @@ console.log(jonas.calcAge());
 jonas.summary();
  */
 
-const mark = {
+/* const mark = {
   name: "Mark Miller",
   mass: 78,
   height: 1.69,
@@ -85,8 +86,8 @@ const john = {
   },
 };
 
-console.log(mark.calcBMI());
-console.log(john.calcBMI());
+mark.calcBMI();
+john.calcBMI();
 
 if (mark.bmi > john.bmi) {
   console.log(
@@ -98,7 +99,38 @@ if (mark.bmi > john.bmi) {
   );
 } else if (mark.bmi === john.bmi) {
   console.log("Las BMI de ambos son iguales " + mark.bmi);
-}
-console.log(
+} */
+/* console.log(
   `${mark.name}'s BMI (${mark.bmi}) is higher than ${john.name}'s (${john.bmi})!`
 );
+ */
+
+const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+const tips = [];
+const total = [];
+
+for (let i = 0; i < bills.length; i++) {
+  const tip = calcTip(bills[i]);
+  tips.push(tip);
+  total.push(bills[i] + tip);
+}
+
+function calcTip(bill) {
+  return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+}
+
+console.log(bills);
+console.log(tips);
+console.log(total);
+
+function calcAverage(arr) {
+  let suma = 0;
+  for (let i = 0; i < arr.length; i++) {
+    suma += arr[i];
+  }
+  console.log(suma / arr.length);
+}
+
+calcAverage(bills);
+calcAverage(tips);
+calcAverage(total);
